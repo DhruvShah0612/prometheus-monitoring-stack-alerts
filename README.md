@@ -48,7 +48,7 @@ sudo apt update
 wget https://github.com/prometheus/prometheus/releases/download/v3.5.0-rc.0/prometheus-3.5.0-rc.0.linux-amd64.tar.gz
 tar -xvf prometheus-3.5.0-rc.0.linux-amd64.tar.gz
 sudo rm prometheus-3.5.0-rc.0.linux-amd64.tar.gz
-sudo mv prometheus-3.5.0.linux-amd64 Prometheus
+sudo mv prometheus-3.5.0-rc.0.linux-amd64 Prometheus
 ```
 
 **Install Blackbox Exporter**
