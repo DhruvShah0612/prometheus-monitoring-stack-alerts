@@ -329,6 +329,7 @@ inhibit_rules:
   Restart your Java app and receive a resolved alert.
 
 ---
+![output](prometheus_final_status.png)
 
 ![prometheus](prometheus_alert.png)
 
@@ -356,11 +357,5 @@ inhibit_rules:
 2. Visit: [Google App Passwords](https://myaccount.google.com/apppasswords)
 3. Generate a new app password for "Mail".
 4. Use it in your `alertmanager.yml`.
-
----
-
-## 🖼️ Output Example
-
-![final_output](prometheus_final_status.png)
 
 ---
