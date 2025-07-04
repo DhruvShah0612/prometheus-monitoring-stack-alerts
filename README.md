@@ -114,14 +114,29 @@ java -jar database_service_project-0.0.3-SNAPSHOT.jar &
 
 ```bash
 cd Prometheus
-./prometheus &    # http://<monitor_ip>:9090
-
-cd ../alertmanager
-./alertmanager &  # http://<monitor_ip>:9093
-
-cd ../blackbox
-./blackbox_exporter &  # http://<monitor_ip>:9115
+./prometheus &
 ```
+- Access: `http://<monitor_ip>:9090`
+  
+![prometheus](prometheus_query.png)
+
+```
+cd ../alertmanager
+./alertmanager &
+```
+- Access: `http://<monitor_ip>:9093`
+
+![alertmanager](alertmanager.png)
+
+```
+cd ../blackbox
+./blackbox_exporter &
+```
+- Access: `http://<monitor_ip>:9115`
+
+![blackbox](blackbox_exporter.png)
+
+# http://<monitor_ip>:9115
 
 ---
 
@@ -206,6 +221,10 @@ groups:
 
 ### 6️⃣ Configure `prometheus.yml`
 
+```
+nano prometheus.yml
+```
+
 ```yaml
 global:
   scrape_interval: 15s
@@ -266,6 +285,10 @@ kill <pid>
 ---
 
 ### 8️⃣ Configure Alertmanager for Gmail
+```
+cd ../alertmanager/
+nano alertmanager.yml
+```
 
 ```yaml
 global:
@@ -306,6 +329,14 @@ inhibit_rules:
   Restart your Java app and receive a resolved alert.
 
 ---
+
+![prometheus](prometheus_alert.png)
+
+![alertmanager](alertmanager_alert.png)
+
+![prometheus](prometheus_target.png)
+
+![gmail](alert_mail.png)
 
 ## 📊 Monitoring UI Access
 
