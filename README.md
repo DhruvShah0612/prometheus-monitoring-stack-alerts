@@ -261,5 +261,34 @@ Restart Alertmanager:
 pgrep alertmanager
 kill <pid>
 ./alertmanager &
- 
+
+✅ Test Alert: Simulate Downtime
+🧪 Trigger Website Down
+
+On vm:
+pkill java
+
+🔔 Gmail Alert: WebsiteDown fired
+
+✅ Restore Website
+cd ~/<your_repo>/target
+java -jar database_service_project-0.0.3-SNAPSHOT.jar &
+
+🔔 Gmail Alert: WebsiteDown resolved
+
+📈 Monitoring UI Access
+Service	URL
+Prometheus	http://<monitor_ip>:9090
+Alertmanager	http://<monitor_ip>:9093
+Blackbox Probe	http://<monitor_ip>:9115
+Java Web App	http://<vm_ip>:8080
+Node Exporter	http://<vm_ip>:9100
+
+📬 Gmail App Password Setup
+Enable 2FA on your Gmail
+Visit: https://myaccount.google.com/apppasswords
+Generate new app password for “Mail”
+Use it in alertmanager.yml
+
+
 
